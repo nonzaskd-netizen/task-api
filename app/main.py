@@ -4,4 +4,4 @@ app = FastAPI()
 
 @app.get("/")
 def hello():
-    return {"message": "Hello Jenkins 3"}
+    return {"message": "Hello Jenkins"}
