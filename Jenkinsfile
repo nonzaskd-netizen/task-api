@@ -3,16 +3,23 @@ pipeline {
 
     stages {
 
+        stage('Setup') {
+            steps {
+                bat 'C:\\Python\\Python314\\python.exe -m venv venv'
+            }
+        }
+
         stage('Install') {
             steps {
-                bat 'pip install -r requirements.txt'
+                bat 'venv\\Scripts\\python.exe -m pip install -r requirements.txt'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'pytest'
+                bat 'venv\\Scripts\\python.exe -m pytest'
             }
         }
+
     }
 }
