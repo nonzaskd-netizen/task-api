@@ -15,11 +15,11 @@ pipeline {
             }
         }
 
-        stage('Test') {
+       stage('Test') {
             steps {
                 bat 'venv\\Scripts\\python.exe -m pytest --junitxml=result.xml'
             }
-        }
+}
 
     }
 
