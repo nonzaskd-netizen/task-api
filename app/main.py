@@ -8,11 +8,10 @@ class LoginRequest(BaseModel):
     username: str
     password: str
 
-
 @app.post("/login")
 def login(data: LoginRequest):
 
-    if data.username == "admin" and data.password == "1234":
+    if data.username == "admin123" and data.password == "1234":
         return {
             "message": "Login successful"
         }
