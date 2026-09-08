@@ -22,7 +22,6 @@ pipeline {
 }
 
     }
-
     post {
         always {
             junit 'result.xml'
