@@ -1,13 +1,23 @@
-from fastapi.testclient import TestClient
-from app.main import app
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 
-client = TestClient(app)
+app = FastAPI()
 
 
-def test_hello():
-    response = client.get("/")
+class LoginRequest(BaseModel):
+    username: str
+    password: str
 
-    assert response.status_code == 200
-    assert response.json() == {
-        "message": "Hello Jenkins"
-    }
+
+@app.post("/login")
+def login(data: LoginRequest):
+
+    if data.username == "admin" and data.password == "1234":
+        return {
+            "message": "Login successful"
+        }
+
+    raise HTTPException(
+        status_code=401,
+        detail="Invalid username or password"
+    )
