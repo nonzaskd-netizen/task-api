@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="0.160" timestamp="2026-09-08T21:33:45.985503+07:00" hostname="lfbn-idf1-1-1434-102.w90-90.abo.wanadoo.fr"><testcase classname="tests.test_demo" name="test_example" time="0.000" /><testcase classname="tests.test_main" name="test_hello" time="0.012"><failure message="AssertionError: assert {'message': 'Hello Jenkins 2'} == {'message': 'Hello Jenkins'}&#10;  &#10;  Differing items:&#10;  #x1B[0m{#x1B[33m'#x1B[39;49;00m#x1B[33mmessage#x1B[39;49;00m#x1B[33m'#x1B[39;49;00m: #x1B[33m'#x1B[39;49;00m#x1B[33mHello Jenkins 2#x1B[39;49;00m#x1B[33m'#x1B[39;49;00m}#x1B[90m#x1B[39;49;00m != #x1B[0m{#x1B[33m'#x1B[39;49;00m#x1B[33mmessage#x1B[39;49;00m#x1B[33m'#x1B[39;49;00m: #x1B[33m'#x1B[39;49;00m#x1B[33mHello Jenkins#x1B[39;49;00m#x1B[33m'#x1B[39;49;00m}#x1B[90m#x1B[39;49;00m&#10;  Use -v to get more diff">def test_hello():
+        response = client.get("/")
+    
+        assert response.status_code == 200
+&gt;       assert response.json() == {
+            "message": "Hello Jenkins"
+        }
+E       AssertionError: assert {'message': 'Hello Jenkins 2'} == {'message': 'Hello Jenkins'}
+E         
+E         Differing items:
+E         #x1B[0m{#x1B[33m'#x1B[39;49;00m#x1B[33mmessage#x1B[39;49;00m#x1B[33m'#x1B[39;49;00m: #x1B[33m'#x1B[39;49;00m#x1B[33mHello Jenkins 2#x1B[39;49;00m#x1B[33m'#x1B[39;49;00m}#x1B[90m#x1B[39;49;00m != #x1B[0m{#x1B[33m'#x1B[39;49;00m#x1B[33mmessage#x1B[39;49;00m#x1B[33m'#x1B[39;49;00m: #x1B[33m'#x1B[39;49;00m#x1B[33mHello Jenkins#x1B[39;49;00m#x1B[33m'#x1B[39;49;00m}#x1B[90m#x1B[39;49;00m
+E         Use -v to get more diff
+
+tests/test_main.py:11: AssertionError</failure></testcase></testsuite></testsuites>
