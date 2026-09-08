@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 app = FastAPI()
-
+# Jenkins test
 
 class LoginRequest(BaseModel):
     username: str
