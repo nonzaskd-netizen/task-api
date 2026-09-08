@@ -37,8 +37,7 @@ def test_login_user_not_found():
     response = client.post(
         "/login",
         json={
-            # "username": "unknown"
-            "unknown": "unknown",
+            "username": "unknown",
             "password": "1234"
         }
     )
