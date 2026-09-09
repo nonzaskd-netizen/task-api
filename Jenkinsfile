@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'test-junit',
+                git branch: 'main',
                     url: 'https://github.com/nonzaskd-netizen/task-api.git'
             }
         }
